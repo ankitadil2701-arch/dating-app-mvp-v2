@@ -1,0 +1,8 @@
+import Link from "next/link";
+export default function Home() {
+  return <main className="shell">
+    <nav className="topbar"><Link className="brand" href="/"><span>n</span> NearMe</Link><div className="navlinks"><Link href="#features">Features</Link><Link href="#safety">Safety</Link></div><Link className="button secondary" href="/auth">Sign in</Link></nav>
+    <section className="hero"><div><p className="eyebrow">REAL CONNECTIONS, NEARBY</p><h1>Meet someone new.<br/><em>Start with a hello.</em></h1><p className="lede">Create an account, build your profile, and discover people with respectful mutual connections.</p><div className="actions"><Link className="button primary" href="/auth">Create your account</Link><a className="button secondary" href="#features">How it works</a></div><div className="trust"><span>18+ only</span><span>Private profile data</span><span>Respect first</span></div></div><div className="profile-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85" alt="Smiling adult"/><div><strong>Aanya, 24</strong><span>Example profile</span></div></div></section>
+    <section id="features" className="section"><p className="eyebrow">HOW IT WORKS</p><h2>Built around respectful connections</h2><div className="features"><article><b>01</b><h3>Create a profile</h3><p>Add a photo and a few things that make you, you.</p></article><article><b>02</b><h3>Discover carefully</h3><p>Explore profiles without sharing exact locations.</p></article><article><b>03</b><h3>Start a conversation</h3><p>Mutual interest is the start of a connection.</p></article></div></section><footer id="safety"><span>© 2026 NearMe</span><span>Adults 18+</span><span>Privacy · Safety · Respect</span></footer>
+  </main>;
+}

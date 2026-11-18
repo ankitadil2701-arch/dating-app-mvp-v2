@@ -1,0 +1,5 @@
+"use client";
+import Link from "next/link";
+import { useEffect,useState } from "react";
+import { getSupabaseBrowserClient } from "@/lib/supabase-browser";
+export default function DiscoverPage(){const [email,setEmail]=useState("");const [message,setMessage]=useState("Loading account…");useEffect(()=>{getSupabaseBrowserClient().auth.getUser().then(({data,error})=>{if(error||!data.user){setMessage("Please sign in to continue.");return;}setEmail(data.user.email??"");setMessage("Your account is ready. Profile and discovery setup comes next.");}).catch(()=>setMessage("Add Supabase settings to enable sign-in."));},[]);return <main className="auth"><Link className="brand" href="/"><span>n</span> NearMe</Link><section><p className="eyebrow">DISCOVER · ADULTS 18+</p><h1>Welcome{email?`, ${email}`:""}</h1><p>{message}</p><Link className="button primary" href="/auth">Account settings</Link></section><style jsx>{`.auth{min-height:100vh;padding:32px}.auth section{max-width:540px;margin:10vh auto;padding:32px;border:1px solid #eedee4;border-radius:20px;background:white}.auth h1{font-size:38px}`}</style></main>;}
